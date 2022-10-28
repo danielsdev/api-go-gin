@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/danielsdev/api-go-gin/database"
@@ -14,14 +13,6 @@ func ExibeTodosAlunos(c *gin.Context) {
 	database.DB.Find(&alunos)
 	c.JSON(200, alunos)
 	//c.JSON(200, fixtures.Alunos)
-}
-
-func ExibeMensagem(c *gin.Context) {
-	nome := c.Params.ByName("nome")
-
-	c.JSON(200, gin.H{
-		"API diz:": "E ai " + nome + ", tudo beleza?",
-	})
 }
 
 func CriaNovoAluno(c *gin.Context) {
@@ -57,20 +48,8 @@ func DeletaAluno(c *gin.Context) {
 	var aluno models.Aluno
 	id := c.Params.ByName("id")
 
-	// err := database.DB.First(&aluno, id).Error
-
-	// if "record not found" == err.Error() {
-	// 	c.JSON(http.StatusNotFound, gin.H{
-	// 		"error": "Aluno não encontrado",
-	// 	})
-	// 	return
-	// }
-
 	err := database.DB.Delete(&aluno, id).Error
 	// database.DB.Delete(&aluno, id)
-
-	fmt.Println("erro aqui ó:")
-	fmt.Println(err)
 
 	if err != nil {
 		c.JSON(http.StatusNotFound, gin.H{
