@@ -1,8 +1,8 @@
 # API de alunos
 
 ## Executar o projeto
- - docker-compose up -d
- - go run main.go
+ - copiar .env.example para .env
+ - docker-compose up -d --build
 
 ## Acessar banco de dados
  - http://localhost:54321/
