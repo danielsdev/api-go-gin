@@ -1,4 +1,5 @@
 # API de alunos
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=API%20alunos&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fdanielsdev%2Fapi-go-gin%2Fmain%2Finsomnia%2FInsomnia_2022-10-28.json)
 
 Esse projeto é uma API REST para gerenciar alunos de uma escola
 
